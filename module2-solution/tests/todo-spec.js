@@ -18,12 +18,19 @@
 //   });
 // });
 
-describe('assignment 1', function() {
-  it('should have three elements', function() {
-    browser.get('//Users/kyle/Projects/simple-html-assignment/module2-solution/index.html');
+describe('Assignment 1', function() {
+  it('should have a title "Our Menu"', function() {
+    browser.driver.get('file:///Users/kyle/Projects/simple-html-assignment/module2-solution/index.html');
+    title = browser.driver.findElement(by.id("title"));
+    expect(title.getText()).toEqual("Responsive Layout");
+  });
 
-    title = element(by.model('title'));
-    expect(title.toEqual("Responsive Design"));
-
+  it('should have 3 sections', function() {
+    browser.manage().window().setSize(320, 480);
+    browser.driver.get('file:///Users/kyle/Projects/simple-html-assignment/module2-solution/index.html');
+    browser.driver.findElements(by.id('section')).
+    then(function(elems) {
+      expect(elems.length).toEqual(3);
+    });
   });
 });
