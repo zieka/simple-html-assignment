@@ -22,7 +22,7 @@ describe('Assignment 1', function() {
   it('should have a title "Our Menu"', function() {
     browser.driver.get('file:///Users/kyle/Projects/simple-html-assignment/module2-solution/index.html');
     title = browser.driver.findElement(by.id("title"));
-    expect(title.getText()).toEqual("Responsive Layout");
+    expect(title.getText()).toEqual("Our Menu");
   });
 
   it('should have 3 sections', function() {
