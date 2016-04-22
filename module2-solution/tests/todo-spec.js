@@ -19,15 +19,15 @@
 // });
 
 describe('Assignment 1', function() {
-  it('should have a title "Our Menu"', function() {
-    browser.driver.get('file:///Users/kyle/Projects/simple-html-assignment/module2-solution/index.html');
-    title = browser.driver.findElement(by.id("title"));
-    expect(title.getText()).toEqual("Our Menu");
+  it('should have a page heading saying "Our Menu"', function() {
+    browser.driver.get('file://' + __dirname + '/../index.html');
+    heading = browser.driver.findElement(by.id("heading"));
+    expect(heading.getText()).toEqual("Our Menu");
   });
 
   it('should have 3 sections', function() {
     browser.manage().window().setSize(320, 480);
-    browser.driver.get('file:///Users/kyle/Projects/simple-html-assignment/module2-solution/index.html');
+    browser.driver.get('file://' + __dirname + '/../index.html');
     browser.driver.findElements(by.id('section')).
     then(function(elems) {
       expect(elems.length).toEqual(3);

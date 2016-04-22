@@ -9,7 +9,7 @@ exports.config = {
     //chromeDriver: './support/chromedriver', // relative path to node-webkit's chromedriver
     //chromeOnly: true, // starting Selenium server isn't required in our case
     specs: ['todo-spec.js'],
-    baseUrl: 'file:///Users/kyle/Projects/simple-html-assignment/module2-solution/index.html',
+    baseUrl: 'file://' + __dirname + '/../index.html',
     //rootElement: 'html', // specify a correct element where you bootstrap your AngularJS app, 'body' by default
 
     onPrepare: function() {
