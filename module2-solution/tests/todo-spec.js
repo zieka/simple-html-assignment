@@ -26,11 +26,31 @@ describe('Assignment 1', function() {
   });
 
   it('should have 3 sections', function() {
-    browser.manage().window().setSize(320, 480);
     browser.driver.get('file://' + __dirname + '/../index.html');
     browser.driver.findElements(by.id('section')).
     then(function(elems) {
       expect(elems.length).toEqual(3);
     });
   });
+
+  it('should have 3 sections in the same verticle location when the browser with is 992px or larger', function() {
+    browser.manage().window().setSize(992, 992);
+    browser.driver.get('file://' + __dirname + '/../index.html');
+    browser.driver.findElements(by.id("section")).
+    then(function(elems) {
+      var first;
+      elems[0].getLocation().
+      then(function (navDivLocation) {
+        first = navDivLocation.y;
+      });
+      for (i = 1; i < elems.length; i++) {
+        elems[i].getLocation().
+        then(function (navDivLocation) {
+           expect(navDivLocation.y).toEqual(first);
+        });
+      };
+    });
+  });
+
+
 });
