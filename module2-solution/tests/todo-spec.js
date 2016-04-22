@@ -37,7 +37,7 @@ describe('Assignment 1', function() {
     });
   });
 
-  it('should have 3 sections in the same verticle location when the browser width is 992px or larger', function() {
+  it('should have sections in the same verticle location when the browser width is 992px or larger (Desktop View)', function() {
     browser.manage().window().setSize(992, 992);
     browser.driver.get('file://' + __dirname + '/../index.html');
 
@@ -62,7 +62,7 @@ describe('Assignment 1', function() {
     });
   });
 
-  it('should have 3 sections in the same horizontal location when the browser width is 767px or less', function() {
+  it('should have 3 sections in the same horizontal location when the browser width is 767px or less (Mobile View)', function() {
     browser.manage().window().setSize(767, 767);
     browser.driver.get('file://' + __dirname + '/../index.html');
 
@@ -87,5 +87,38 @@ describe('Assignment 1', function() {
     });
   });
 
+
+  it('should have 2 sections in the same verticle location and the third section should be located below when the browser width is 768px - 991px (Tablet View)', function() {
+    browser.manage().window().setSize(888, 888);
+    browser.driver.get('file://' + __dirname + '/../index.html');
+
+    // Find Sections
+    browser.driver.findElements(by.id("section")).
+    then(function(elems) {
+
+      // Find the first sections's y position
+      var first;
+      elems[0].getLocation().
+      then(function (navDivLocation) {
+        first = navDivLocation.y;
+      });
+
+      // Find the second sections's y position and assert it is the same as first
+      var second;
+      elems[1].getLocation().
+      then(function (navDivLocation) {
+        second = navDivLocation.y;
+        expect(first).toEqual(second);
+      });
+
+      // Find the third sections's y position and assert it below first
+      var third;
+      elems[2].getLocation().
+      then(function (navDivLocation) {
+        third = navDivLocation.y;
+        expect(first).toBeLessThan(third);
+      });
+    });
+  });
 
 });
