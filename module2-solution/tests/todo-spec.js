@@ -21,32 +21,67 @@
 describe('Assignment 1', function() {
   it('should have a page heading saying "Our Menu"', function() {
     browser.driver.get('file://' + __dirname + '/../index.html');
+
+    //Find heading and assert the text is known
     heading = browser.driver.findElement(by.id("heading"));
     expect(heading.getText()).toEqual("Our Menu");
   });
 
   it('should have 3 sections', function() {
     browser.driver.get('file://' + __dirname + '/../index.html');
+
+    //Find Sections and assert there are 3
     browser.driver.findElements(by.id('section')).
     then(function(elems) {
       expect(elems.length).toEqual(3);
     });
   });
 
-  it('should have 3 sections in the same verticle location when the browser with is 992px or larger', function() {
+  it('should have 3 sections in the same verticle location when the browser width is 992px or larger', function() {
     browser.manage().window().setSize(992, 992);
     browser.driver.get('file://' + __dirname + '/../index.html');
+
+    // Find Sections
     browser.driver.findElements(by.id("section")).
     then(function(elems) {
+
+      // Find the first sections's y position
       var first;
       elems[0].getLocation().
       then(function (navDivLocation) {
         first = navDivLocation.y;
       });
+
+      // Assert that all other sections have the same y position
       for (i = 1; i < elems.length; i++) {
         elems[i].getLocation().
         then(function (navDivLocation) {
            expect(navDivLocation.y).toEqual(first);
+        });
+      };
+    });
+  });
+
+  it('should have 3 sections in the same horizontal location when the browser width is 767px or less', function() {
+    browser.manage().window().setSize(767, 767);
+    browser.driver.get('file://' + __dirname + '/../index.html');
+
+    // Find Sections
+    browser.driver.findElements(by.id("section")).
+    then(function(elems) {
+
+      // Find the first sections's x position
+      var first;
+      elems[0].getLocation().
+      then(function (navDivLocation) {
+        first = navDivLocation.x;
+      });
+
+      // Assert that all other sections have the same x position
+      for (i = 1; i < elems.length; i++) {
+        elems[i].getLocation().
+        then(function (navDivLocation) {
+           expect(navDivLocation.x).toEqual(first);
         });
       };
     });
