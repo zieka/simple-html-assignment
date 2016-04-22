@@ -20,6 +20,7 @@
 
 describe('Assignment 1', function() {
   it('should have a page heading saying "Our Menu"', function() {
+
     browser.driver.get('file://' + __dirname + '/../index.html');
 
     //Find heading and assert the text is known
@@ -37,7 +38,9 @@ describe('Assignment 1', function() {
     });
   });
 
-  it('should have sections in the same verticle location when the browser width is 992px or larger (Desktop View)', function() {
+  it(`should have 3 sections in the same verticle location when the browser
+     width is 992px or larger (Desktop View)`, function() {
+
     browser.manage().window().setSize(992, 992);
     browser.driver.get('file://' + __dirname + '/../index.html');
 
@@ -62,7 +65,38 @@ describe('Assignment 1', function() {
     });
   });
 
-  it('should have 3 sections in the same horizontal location when the browser width is 767px or less (Mobile View)', function() {
+  it(`should have 3 sections in the same size when the browser
+     width is 992px or larger (Desktop View)`, function() {
+
+    browser.manage().window().setSize(992, 992);
+    browser.driver.get('file://' + __dirname + '/../index.html');
+
+    // Find Sections
+    browser.driver.findElements(by.id("section")).
+    then(function(elems) {
+
+      // Find the first sections's y position
+      var first = [];
+      elems[0].getSize().
+      then(function (navDivSize) {
+        first[0] = navDivSize.width;
+        first[1] = navDivSize.height;
+      });
+
+      // Assert that all other sections have the same y position
+      for (i = 1; i < elems.length; i++) {
+        elems[i].getSize().
+        then(function (navDivSize) {
+          expect(Math.abs(navDivSize.width - first[0])).toBeLessThan(2);
+          expect(Math.abs(navDivSize.height - first[1])).toBeLessThan(2);
+        });
+      };
+    });
+  });
+
+  it(`should have 3 sections in the same horizontal location when the browser
+    width is 767px or less (Mobile View)`, function() {
+
     browser.manage().window().setSize(767, 767);
     browser.driver.get('file://' + __dirname + '/../index.html');
 
@@ -88,7 +122,10 @@ describe('Assignment 1', function() {
   });
 
 
-  it('should have 2 sections in the same verticle location and the third section should be located below when the browser width is 768px - 991px (Tablet View)', function() {
+  it(`should have 2 sections in the same verticle location and the third section
+     should be located below when the browser width is 768px - 991px
+     (Tablet View)`, function() {
+
     browser.manage().window().setSize(888, 888);
     browser.driver.get('file://' + __dirname + '/../index.html');
 
