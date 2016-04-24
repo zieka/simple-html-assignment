@@ -7,6 +7,8 @@
 <style>
 /********** Base styles **********/
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: Helvetica;
 }
@@ -15,8 +17,9 @@ h1 {
   text-align: center;
   font-size: 175%;
 }
+
 p {
-  border: 1px solid black;
+  border: 3px solid black;
   width: 150px;
   height: 30px;
   color: black;
@@ -25,14 +28,19 @@ p {
 
 #section {
   position: relative;
+  border: 3px solid black;
   background-color: rgb(153, 153, 153);
+  width: auto;;
   height: 150px;
+  margin: 10px;
+  font-family: Helvetica;
+  color: white;
 }
 
 .section-title {
-  top:-21;
-  right:0;
-  position: absolute;
+  top:-23px;
+  right:-3px;
+  position: absolute;;
   font-size: 125%;
 }
 
@@ -49,7 +57,7 @@ p {
   background-color: rgb(228, 208, 155);
 }
 
-/* Simple Responsive Framework. */
+/* Simple Responsive Framework.
 .row {
   width: 100%;
 }
@@ -57,7 +65,7 @@ p {
 @media (min-width: 992px) {
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
-    border: 1px solid green;
+    /*border: 1px solid green;*/
   }
   .col-lg-1 {
     width: 8.33%;
@@ -100,7 +108,7 @@ p {
 @media (min-width: 768px) and (max-width: 991px) {
   .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
-    border: 1px solid green;
+    /*border: 1px solid green;*/
   }
   .col-md-1 {
     width: 8.33%;
@@ -143,7 +151,7 @@ p {
 @media (max-width: 767px) {
   .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
-    border: 1px solid green;
+    /*border: 1px solid green;*/
   }
   .col-sm-1 {
     width: 8.33%;
@@ -189,20 +197,26 @@ p {
 <h1 id='heading'>Our Menu</h1>
 
 <div class="row">
-  <div id = 'section' class="col-lg-4 col-md-6 col-sm-12 ">
-    <p id = 'section-title-1' class = 'section-title'>
-      Chicken
-    </p>
+  <div class="col-lg-4 col-md-6 col-sm-12 ">
+    <div id = 'section'>
+      <p id = 'section-title-1' class = 'section-title'>
+        Chicken
+      </p>
+    </div>
   </div>
-  <div id = 'section' class="col-lg-4 col-md-6 col-sm-12 ">
+  <div class="col-lg-4 col-md-6 col-sm-12 ">
+    <div id = 'section'>
     <p id = 'section-title-2' class = 'section-title'>
       Beef
     </p>
   </div>
-  <div id = 'section' class="col-lg-4 col-md-12 col-sm-12 ">
+  </div>
+  <div class="col-lg-4 col-md-12 col-sm-12 ">
+    <div id = 'section'>
     <p id = 'section-title-3' class = 'section-title'>
       Sushi
     </p>
+  </div>
   </div>
 </div>
 
