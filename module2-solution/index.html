@@ -14,14 +14,41 @@ h1 {
 }
 p {
   border: 1px solid black;
-  background-color: #A52A2A;
-  width: 90%;
-  height: 150px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 150px;
+  height: 30px;
   font-family: Helvetica;
   color: white;
 }
+
+#section {
+  position: relative;
+  background-color: rgb(153, 153, 153);
+  height: 150px;
+}
+
+#section-title-1 {
+  top:-16;
+  right:0;
+  position: absolute;
+  background-color: rgb(212, 152, 153);
+  color: black;
+}
+
+#section-title-2 {
+  top:-16;
+  right:0;
+  position: absolute;
+  background-color: rgb(191, 70, 70);
+}
+
+#section-title-3 {
+  top:-16;
+  right:0;
+  position: absolute;
+  background-color: rgb(228, 208, 155);
+  color: black;
+}
+
 /* Simple Responsive Framework. */
 .row {
   width: 100%;
@@ -162,9 +189,9 @@ p {
 <h1 id='heading'>Our Menu</h1>
 
 <div class="row">
-  <div id = 'section' class="col-lg-4 col-md-6 col-sm-12 "><p>Item 1</p></div>
-  <div id = 'section' class="col-lg-4 col-md-6 col-sm-12 "><p>Item 2</p></div>
-  <div id = 'section' class="col-lg-4 col-md-12 col-sm-12 "><p>Item 3</p></div>
+  <div id = 'section' class="col-lg-4 col-md-6 col-sm-12 "><p id = 'section-title-1'>Chicken</p></div>
+  <div id = 'section' class="col-lg-4 col-md-6 col-sm-12 "><p id = 'section-title-2'>Beef</p></div>
+  <div id = 'section' class="col-lg-4 col-md-12 col-sm-12 "><p id = 'section-title-3'>Sushi</p></div>
 </div>
 
 </body>

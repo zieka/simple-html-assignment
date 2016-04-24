@@ -18,6 +18,17 @@
 //   });
 // });
 
+
+//------------------------------------------------------------------------------
+// ToDo List:
+//
+// * Each section needs relative tag
+// * There should be 3 section titles
+// * Each section-title needs absolute tag and top right
+//
+//------------------------------------------------------------------------------
+
+
 describe('Assignment 1', function() {
   it('should have a page heading saying "Our Menu"', function() {
 
@@ -75,7 +86,7 @@ describe('Assignment 1', function() {
     browser.driver.findElements(by.id("section")).
     then(function(elems) {
 
-      // Find the first sections's y position
+      // Find the first sections's size
       var first = [];
       elems[0].getSize().
       then(function (navDivSize) {
@@ -83,7 +94,7 @@ describe('Assignment 1', function() {
         first[1] = navDivSize.height;
       });
 
-      // Assert that all other sections have the same y position
+      // Assert that all other sections have the same size with a tolerance of 2
       for (i = 1; i < elems.length; i++) {
         elems[i].getSize().
         then(function (navDivSize) {
