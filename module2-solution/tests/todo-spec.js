@@ -43,7 +43,7 @@ describe('Assignment 1', function() {
     browser.driver.get('file://' + __dirname + '/../index.html');
 
     //Find Sections and assert there are 3
-    browser.driver.findElements(by.id('section')).
+    browser.driver.findElements(by.css('.section')).
     then(function(elems) {
       expect(elems.length).toEqual(3);
     });
@@ -56,7 +56,7 @@ describe('Assignment 1', function() {
     browser.driver.get('file://' + __dirname + '/../index.html');
 
     // Find Sections
-    browser.driver.findElements(by.id("section")).
+    browser.driver.findElements(by.css(".section")).
     then(function(elems) {
 
       // Find the first sections's y position
@@ -83,7 +83,7 @@ describe('Assignment 1', function() {
     browser.driver.get('file://' + __dirname + '/../index.html');
 
     // Find Sections
-    browser.driver.findElements(by.id("section")).
+    browser.driver.findElements(by.css(".section")).
     then(function(elems) {
 
       // Find the first sections's size
@@ -112,7 +112,7 @@ describe('Assignment 1', function() {
     browser.driver.get('file://' + __dirname + '/../index.html');
 
     // Find Sections
-    browser.driver.findElements(by.id("section")).
+    browser.driver.findElements(by.css(".section")).
     then(function(elems) {
 
       // Find the first sections's x position
@@ -141,7 +141,7 @@ describe('Assignment 1', function() {
     browser.driver.get('file://' + __dirname + '/../index.html');
 
     // Find Sections
-    browser.driver.findElements(by.id("section")).
+    browser.driver.findElements(by.css(".section")).
     then(function(elems) {
 
       // Find the first sections's y position
