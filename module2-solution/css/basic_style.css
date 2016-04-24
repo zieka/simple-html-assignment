@@ -23,7 +23,6 @@ p {
   height: 153px;
   margin: 10px;
   color: black;
-  display: inline-block;
   word-wrap: break-word;
   overflow: hidden;
   display: -webkit-box;
