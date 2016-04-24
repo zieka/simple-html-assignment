@@ -8,17 +8,18 @@
 /********** Base styles **********/
 * {
   box-sizing: border-box;
+  font-family: Helvetica;
 }
 h1 {
   margin-bottom: 15px;
   text-align: center;
+  font-size: 175%;
 }
 p {
   border: 1px solid black;
   width: 150px;
   height: 30px;
-  font-family: Helvetica;
-  color: white;
+  color: black;
   text-align: center;
 }
 
@@ -28,27 +29,24 @@ p {
   height: 150px;
 }
 
-#section-title-1 {
-  top:-16;
+.section-title {
+  top:-21;
   right:0;
   position: absolute;
+  font-size: 125%;
+}
+
+#section-title-1 {
   background-color: rgb(212, 152, 153);
-  color: black;
 }
 
 #section-title-2 {
-  top:-16;
-  right:0;
-  position: absolute;
   background-color: rgb(191, 70, 70);
+  color: white;
 }
 
 #section-title-3 {
-  top:-16;
-  right:0;
-  position: absolute;
   background-color: rgb(228, 208, 155);
-  color: black;
 }
 
 /* Simple Responsive Framework. */
@@ -191,9 +189,21 @@ p {
 <h1 id='heading'>Our Menu</h1>
 
 <div class="row">
-  <div id = 'section' class="col-lg-4 col-md-6 col-sm-12 "><p id = 'section-title-1'>Chicken</p></div>
-  <div id = 'section' class="col-lg-4 col-md-6 col-sm-12 "><p id = 'section-title-2'>Beef</p></div>
-  <div id = 'section' class="col-lg-4 col-md-12 col-sm-12 "><p id = 'section-title-3'>Sushi</p></div>
+  <div id = 'section' class="col-lg-4 col-md-6 col-sm-12 ">
+    <p id = 'section-title-1' class = 'section-title'>
+      Chicken
+    </p>
+  </div>
+  <div id = 'section' class="col-lg-4 col-md-6 col-sm-12 ">
+    <p id = 'section-title-2' class = 'section-title'>
+      Beef
+    </p>
+  </div>
+  <div id = 'section' class="col-lg-4 col-md-12 col-sm-12 ">
+    <p id = 'section-title-3' class = 'section-title'>
+      Sushi
+    </p>
+  </div>
 </div>
 
 </body>
