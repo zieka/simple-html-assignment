@@ -23,12 +23,6 @@ p {
   height: 153px;
   margin: 10px;
   color: black;
-  word-wrap: break-word;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
 }
 
 .section-title {
@@ -58,8 +52,12 @@ p {
 .description {
   position: absolute;
   top: 30px;
+  height:90px;
   margin-left: 15px;
   margin-right: 15px;
+  padding-bottom: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
 }
 
